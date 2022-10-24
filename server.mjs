@@ -1,8 +1,6 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-import { PrismaClient } from "@prisma/client";
-
-const client = new PrismaClient();
+import client from "./client.js";
 
 // The GraphQL schema
 const typeDefs = `#graphql
