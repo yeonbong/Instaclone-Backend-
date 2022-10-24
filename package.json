@@ -18,12 +18,14 @@
   "homepage": "https://github.com/yeonbong/Instaclone-Backend-#readme",
   "dependencies": {
     "@apollo/server": "^4.0.2",
+    "@prisma/client": "^4.5.0",
     "graphql": "^16.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/node": "^7.19.1",
     "@babel/preset-env": "^7.19.4",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "prisma": "^4.5.0"
   }
 }
