@@ -45,8 +45,7 @@ const resolvers = {
 };
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  schema,
 });
 
 const { url } = await startStandaloneServer(server);
