@@ -1,4 +1,3 @@
-// The GraphQL schema
 export default `#graphql
 type Movie {
   id: Int!

@@ -1,5 +1,4 @@
 import client from "../client.js";
-
 export default {
   Mutation: {
     createMovie: (_, { title, year, genre }) =>
