@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import client from "../client";
+import client from "../../client";
 
 export default {
   Mutation: {
@@ -24,7 +24,7 @@ export default {
           throw new Error("This username/password is already taken.");
         }
         const uglyPassword = await bcrypt.hash(password, 10);
-        return client.user.create({
+        await client.user.create({
           data: {
             username,
             email,
@@ -33,23 +33,13 @@ export default {
             password: uglyPassword,
           },
         });
-      } catch (e) {
-        return e;
-      }
-    },
-    login: async (_, { username, password }) => {
-      const user = await client.user.findFirst({ where: { username } });
-      if (!user) {
         return {
-          ok: false,
-          error: "User not found",
+          ok: true,
         };
-      }
-      const passwordOk = await bcrypt.compare(password, user.password);
-      if (!passwordOk) {
+      } catch (e) {
         return {
           ok: false,
-          error: "Incorrect password",
+          error: "Can't create account",
         };
       }
     },
